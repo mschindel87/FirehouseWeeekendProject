@@ -1,5 +1,6 @@
-<div class="hero-unit">
-	<h1>New Picture!</h1>
+<div class="span6 offset3 text-center">
+	<h1 class= "custom-pic-header">Add New Picture</h1>
+	<div class="boxy">
 <%= simple_form_for @pic do |f| %>
 		<%= f.input :hour %>
 		<%= f.input :emotion %>
@@ -7,5 +8,5 @@
 		<%= submit_tag "Create", :class=> 'btn-primarybtn'%>
 	<% end %>
 	
-
+</div>
 </div>

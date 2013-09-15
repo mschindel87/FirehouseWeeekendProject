@@ -1,15 +1,19 @@
-<div class="hero-unit">
-	<h2>Pics Throughout the Day...</h2>
+<h2 class= "custom-pic-header">Pics Throughout the Day...</h2>
+		<% @pics.each do |pic| %>
+		<div class= "span3">
+			<div class="boxy">
+				<h4>Emotion: </h4> <%= pic.emotion %> 
+				<p />
+				<h4>Learned: </h4> <%= pic.learned %> 
+				<p />
+				<h4>Hour: </h4><%= pic.hour %> 
+			</div>
+		</div>
 
-	<% @pics.each do |pic| %>
-		Emotion: <%= pic.emotion %>
-		<p />
-		Learned: <%= pic.learned %>
-		<p />
-		Hour: <%= pic.hour %>
 	<% end %>
 	<br />
-</div>
 
-<%= link_to 'New Pic', new_pic_path %>
+
+
+
 
