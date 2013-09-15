@@ -26,14 +26,30 @@
 	        <!-- .nav, .navbar-search, .navbar-form, etc -->
 	        <ul class="nav">
 	        	
-	        		<%= link_to('Timeline',pics_path, :class => 'btn btn-primary') %> 
+	        	
+        
+        	<% if current_user.blank? %>
+        		<li>
+        			<%= link_to 'Login', new_user_session_path %>
+        		</li>
+        		
+        		<li>
+        		<%= link_to 'Register', new_user_registration_path %>
+        		</li>
+
+        		<% else %>
+				<li>
+					<%= link_to'Logout', destroy_user_session_path, :method => :delete %>
+				</li>
+				<% end %>
+
+
+					        		<%= link_to('Timeline',pics_path, :class => 'btn btn-primary') %> 
 	        	
 	        	
 	        		<%= link_to 'Add New Picture', new_pic_path,  :class => 'btn btn-primary'%>
-	        	
-        	</ul>
 
-
+		</ul>
 
 	      </div>
 	 
